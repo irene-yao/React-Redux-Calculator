@@ -1,12 +1,19 @@
 .row {
   border: 1px solid black;
-  width: 30%;
+  border-radius: 10px;
+  width: 25%;
   height: 60%;
   margin-left: 5%;
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  min-width: 220px
+  min-width: 220px;
+
+  background: rgb(254,255,255);
+  background: -moz-linear-gradient(top, rgba(254,255,255,1) 0%, rgba(210,235,249,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
+  background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 );
 }
 
 .row:after {
@@ -50,6 +57,9 @@ input {
   -moz-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid black;
+  text-align: right;
+  font: bold 1rem sans-serif, arial;
+  padding-right: 3px
 }
 
 .waves-effect {
@@ -69,28 +79,22 @@ input {
 
 .btn-flat {
   width: 90%;
+  height: 36px;
   border: 1px solid black;
   border-radius: 3px;
+  font: 1.5rem sans-serif, arial;
+  outline: 0;
   margin: 0;
   display: inline-block;
-  height: 36px;
   line-height: 36px;
   text-transform: uppercase;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
-}
-
-.btn-flat {
-  font-size: 2rem;
-  outline: 0;
-}
-
-.btn-flat {
   box-shadow: none;
   background-color: transparent;
   color: #343434;
   cursor: pointer;
-  transition: background-color .2s;
+  transition: background-color .3s;
 }
 
 .btn-flat:focus, .btn-flat:active {
@@ -98,7 +102,7 @@ input {
 }
 
 .btn-flat:focus, .btn-flat:hover {
-  background-color: #D2FFFF;
+  background-color: #FFDA2F;
   box-shadow: none;
 }
 
