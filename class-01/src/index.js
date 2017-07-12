@@ -7,7 +7,7 @@ const rootElement = document.getElementById('app');
 const renderApp = () => {
   const App = require('./App')
   render(
-    <AppContainer>
+    <AppContainer>jjjjjjj
         <App />
     </AppContainer>,
     rootElement

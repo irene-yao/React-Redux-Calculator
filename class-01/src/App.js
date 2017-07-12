@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import css from '../css/style.css';
 import CalculatorBtn from './Calculator';
-import {
-    btnType, 
-    btnArray
-} from './Config.js';
+import {btnType, btnArray} from './Config.js';
 
 class App extends Component {
     constructor(props) {
@@ -18,7 +15,7 @@ class App extends Component {
         }
     }
 
-    UpdateNumber = (number) => {
+    UpdateNumber = number => {
         let {displayNum, clickType} = this.state; 
         let val;
 
@@ -29,7 +26,7 @@ class App extends Component {
             val = eval(displayNum + number);                
         }
         else {
-            val = number
+            val = number;
         }
 
         this.setState({
@@ -39,31 +36,32 @@ class App extends Component {
         });
     }
 
-    updateOperator = (operator) => {
+    updateOperator = operator => {
         this.state.operator = operator;
         this.state.preNum = this.state.displayNum;
         this.state.clickType = btnType.Operator;
     }
     
     calculate = () => {
-        let {sum, operator, preNum, displayNum} = this.state;
+        let {sum, operator, preNum, displayNum, clickType} = this.state;
 
         if(operator !== '') {
-            if(preNum === '') {
-                let result = eval(sum + operator + displayNum);
+            if(clickType === btnType.Equal) {
+                let result = eval(sum + operator + preNum);
                 this.setState({
                     ...this.state, 
                     sum : result, 
-                    preNum : displayNum, 
                     displayNum : result, 
                     clickType: btnType.Equal
                 });
             }
-            else {
-                let result = eval(displayNum + operator + preNum);
+            else 
+            {
+                let result = eval(preNum + operator + displayNum);
                 this.setState({
                     ...this.state, 
                     sum : result,
+                    preNum : displayNum,
                     displayNum : result,
                     clickType: btnType.Equal
                 });
